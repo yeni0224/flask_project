@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>설문조사</title>
+</head>
+<body>
+    <h1>{{survey.question}}</h1>
+    <form method="post"> {#post방식으로 받아올 것#}
+        {% for choice in survey.choices %}       {#index 0부터 시작#}
+        <input type="radio" name="choice" value="{{loop.index0}}" required>>
+        {{choice}}<br>{%endfor%}<br>
+        <button type="submit">투표하기</button>
+    </form>
+</body>
+</html>

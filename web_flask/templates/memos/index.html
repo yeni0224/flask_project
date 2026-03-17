@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메모 앱</title>
+</head>
+<body>
+    <h1>메모 목록</h1>
+    <a href="{{url_for('add')}}">+ 새 메모 추가</a>
+    <ul>{%for memo in memos%}
+        <li>
+            <strong>{{memo[1]}}</strong> - {{memo[3]}}
+            <p>{{memo[2]}}</p>
+            <a href="{{url_for('edit', memo_id=memo[0])}}">수정</a> |
+            <a href="{{url_for('delete', memo_id=memo[0])}}">삭제</a>
+        </li>{%endfor%}
+    </ul>
+</body>
+</html>

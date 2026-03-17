@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--posts=posts, user=current_user app.py에서 리턴했음-->
+    <h1>게시글 목록</h1>
+    <p>{{user}}님 환영합니다</p>
+    <!--딕셔너리 출력시 unpacking 사용 가능-->
+    {%for k, v in dict_user.items()%}
+    <div>{{k}}:{{v}}</div> {%endfor%}
+    <ul>
+        {% for post in posts %} {# for 변수 in 리스트 #}
+        <li class="{{loop.cycle('odd','even')}}">
+            {#loop.index : 몇번째 값인지 확인 가능#}
+            {{loop.index}}{{post.title}} (작성자 : {{post.author}})
+            {%if user == post.author%}
+            <span style="color:cadetblue">내가 쓴 글</span>
+            {%endif%}
+        </li>
+        {% endfor %}
+    </ul><br>
+    <a href="/">홈으로</a>
+</body>
+</html>
