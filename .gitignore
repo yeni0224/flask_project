@@ -2,6 +2,9 @@
 __pycache__/
 *.py[codz]
 *$py.class
+*.pyc
+*.pyo
+*.pyd
 
 # C extensions
 *.so
@@ -25,6 +28,26 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
+venv/
+env/
+
+#IDE/Editor Settings
+.vscode/
+.idea/
+*.swp
+
+#OS
+.DS_Store
+Thumbs.db
+
+# PowerShell scripts
+*.ps1
+
+# Batch files
+*.bat
+
+# Shell scripts (Linux/macOS)
+*.sh
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
